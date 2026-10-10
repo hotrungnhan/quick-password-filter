@@ -34,16 +34,18 @@ button:active:not(:disabled) {
 }
 .app-shell {
   max-width: 440px;
-  min-height: 100dvh;
+  height: 100dvh;
   margin: auto;
   background: #f7f8f2;
-  padding: 30px 26px 22px;
+  padding: max(16px, env(safe-area-inset-top)) 22px
+    max(12px, env(safe-area-inset-bottom));
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 header {
-  margin-bottom: 46px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 .brand {
   font-weight: 800;
@@ -82,6 +84,9 @@ header {
 }
 main {
   flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .eyebrow {
   font-size: 9px;
@@ -91,14 +96,14 @@ main {
   display: flex;
   gap: 8px;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 h1 {
-  font-size: 39px;
+  font-size: 32px;
   line-height: 1.15;
   font-weight: 650;
   letter-spacing: -1.8px;
-  margin: 0 0 17px;
+  margin: 0 0 10px;
 }
 h1 span {
   color: #6a865d;
@@ -107,14 +112,14 @@ h1 span {
   font-size: 13px;
   line-height: 1.8;
   color: #7a8278;
-  margin: 0 0 30px;
+  margin: 0 0 18px;
 }
 .overview {
   background: #fff;
   border: 1px solid #e6e9df;
   border-radius: 20px;
-  padding: 22px;
-  margin-bottom: 20px;
+  padding: 16px;
+  margin-bottom: 14px;
   box-shadow: 0 6px 18px #31442f03;
 }
 .section-label {
@@ -130,10 +135,10 @@ h1 span {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  margin: 15px 0 24px;
+  margin: 12px 0 16px;
 }
 .total strong {
-  font-size: 52px;
+  font-size: 42px;
   font-weight: 600;
   letter-spacing: -2px;
   line-height: 1.1;
@@ -145,7 +150,7 @@ h1 span {
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 25px;
+  margin-bottom: 14px;
 }
 .stats > div {
   display: flex;
@@ -230,7 +235,7 @@ h1 span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin: 12px 0 34px;
+  margin: 10px 0 18px;
 }
 .action-grid button {
   border: 1px solid #e0e5d8;
@@ -245,8 +250,8 @@ h1 span {
 }
 .how {
   border-top: 1px solid #e4e7dc;
-  padding-top: 24px;
-  padding-bottom: 26px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 .how-icon {
   border: 1px solid #dfe5d6;
@@ -277,7 +282,7 @@ footer {
   gap: 5px;
   color: #949d8c;
   font-size: 9px;
-  padding-top: 24px;
+  padding-top: 12px;
 }
 .footer-dot {
   margin: 0 3px;
@@ -289,7 +294,7 @@ footer {
   align-items: center;
   color: #7e8976;
   font-size: 11px;
-  margin: -17px 0 30px;
+  margin: 0 0 14px;
 }
 .upload {
   width: 100%;
@@ -365,19 +370,19 @@ h2 {
 .counter {
   font-size: 11px;
   color: #8c9681;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 .password-card {
   background: white;
   border: 1px solid #e0e6d8;
   border-radius: 24px;
-  padding: 30px 25px;
+  padding: 16px 20px;
   position: relative;
   touch-action: pan-y;
   user-select: none;
   transition: border-color 0.15s;
   box-shadow: 0 12px 30px #344a2d08;
-  min-height: 345px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -389,17 +394,17 @@ h2 {
   border-color: #bd8371;
 }
 .site-avatar {
-  width: 62px;
-  height: 62px;
+  width: 42px;
+  height: 42px;
   background: #edf2e5;
   border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 600;
   color: #73865e;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 .password-card h2 {
   text-align: center;
@@ -413,13 +418,13 @@ h2 {
   font-size: 11px;
   overflow-wrap: anywhere;
   max-width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 14px;
 }
 .account-field {
   width: 100%;
   border-top: 1px solid #edf0e7;
-  padding-top: 15px;
-  margin-top: 15px;
+  padding-top: 9px;
+  margin-top: 9px;
 }
 .account-field label {
   font-size: 9px;
@@ -446,7 +451,7 @@ h2 {
   justify-content: space-between;
   font-size: 10px;
   color: #929a88;
-  margin: 21px 5px;
+  margin: 10px 5px;
 }
 .review-actions {
   display: grid;
@@ -457,8 +462,8 @@ h2 {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: 10px 6px;
-  padding: 14px 12px;
+  gap: 7px 6px;
+  padding: 10px 12px;
   min-height: 56px;
   border-radius: 14px;
   font-size: 13px;
@@ -581,7 +586,7 @@ h2 {
   line-height: 1.6;
   padding: 14px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .modal-backdrop {
   position: fixed;
@@ -608,10 +613,10 @@ h2 {
 }
 @media (min-width: 600px) {
   body {
-    padding: 30px 0;
+    padding: 0;
   }
   .app-shell {
-    min-height: 850px;
+    height: 100dvh;
     border-radius: 30px;
     box-shadow: 0 20px 80px #2a40251a;
     border: 1px solid #dbe2d3;
@@ -619,10 +624,11 @@ h2 {
 }
 @media (max-width: 360px) {
   .app-shell {
-    padding: 24px 18px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
   .action-grid button {
     font-size: 10px;
@@ -668,11 +674,70 @@ h2 {
 }
 .review-undo {
   gap: 14px;
-  padding: 14px 16px;
+  padding: 10px 14px;
   width: fit-content;
   max-width: 100%;
   margin: 10px auto 0;
   border: 1px solid #e0e5d8;
   border-radius: 14px;
   font-size: 12px;
+}
+
+footer {
+  flex-shrink: 0;
+}
+.screen-review main {
+  display: flex;
+  flex-direction: column;
+}
+.screen-review main > * {
+  flex-shrink: 0;
+}
+.screen-review .password-card {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+.screen-review .site-avatar {
+  flex-shrink: 0;
+}
+.screen-review .review-progress {
+  margin-bottom: 12px;
+}
+.screen-review .intro {
+  margin-bottom: 12px;
+}
+.screen-review .back {
+  margin-bottom: 10px;
+}
+.how .mt-5 {
+  margin-top: 12px;
+}
+@media (max-height: 700px) {
+  header {
+    margin-bottom: 12px;
+  }
+  .screen-review h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  .screen-review .eyebrow {
+    margin-bottom: 6px;
+  }
+  .screen-review .intro {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .screen-review .site-avatar {
+    display: none;
+  }
+  .screen-review .password-card {
+    padding: 12px 16px;
+  }
+  .screen-review .password-card h2 {
+    margin-top: 4px;
+    font-size: 18px;
+  }
+  .screen-review .site-url {
+    margin-bottom: 4px;
+  }
 }

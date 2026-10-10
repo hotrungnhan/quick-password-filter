@@ -134,7 +134,7 @@ export default function App() {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return (
-    <div className="app-shell">
+    <div className={`app-shell screen-${screen}`}>
       <header className="flex items-center justify-between">
         <button
           className="brand flex items-center gap-2"
@@ -341,7 +341,7 @@ export default function App() {
               Keep the <span>keepers.</span>
             </h1>
             <p className="intro">Does this account still matter to you?</p>
-            <div className="progress-track mb-8">
+            <div className="progress-track review-progress">
               <div style={{ width: `${progress}%` }} />
             </div>
             {current ? (
